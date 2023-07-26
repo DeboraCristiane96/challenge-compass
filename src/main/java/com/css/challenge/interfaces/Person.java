@@ -8,7 +8,7 @@ abstract class Person {
     private String cpf;
     private boolean status;
     private String birthDay;
-    private String maritalStatus;
+    private String civilStatus;
     private Character sex;
     private String phone;
     private String adress;
