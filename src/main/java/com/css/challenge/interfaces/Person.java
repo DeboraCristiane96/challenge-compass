@@ -1,18 +1,40 @@
 package com.css.challenge.interfaces;
 
-abstract class Person {
+import jakarta.persistence.*;
+import lombok.*;
 
-    private String name;
-    private String email;
-    private String emailCompass;
-    private String cpf;
-    private boolean status;
-    private String birthDay;
-    private String civilStatus;
-    private Character sex;
-    private String phone;
-    private String adress;
-    private int zipCode;
-    private String naturalNess;
+import java.io.Serializable;
+
+@Getter
+@Setter
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "tipo", discriminatorType = DiscriminatorType.STRING)
+@DiscriminatorValue("Person")
+public abstract class Person implements Serializable {
+
+
+    public String name;
+
+    public String email;
+
+    public String emailCompass;
+
+    public String cpf;
+
+    public boolean status;
+
+    public String birthDay;
+
+    public String civilStatus;
+
+    public Character sex;
+
+    public String phone;
+
+    public String adress;
+
+    public int zipCode;
+
+    public String naturalNess;
 
 }
