@@ -14,7 +14,7 @@ import lombok.*;
 @EqualsAndHashCode(of = "id")
 public class Student extends Person {
 
-
+    private Long id;
     private int period;
     private String course;
     private String college;
