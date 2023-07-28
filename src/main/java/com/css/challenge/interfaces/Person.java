@@ -7,9 +7,9 @@ import java.io.Serializable;
 
 @Getter
 @Setter
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "tipo", discriminatorType = DiscriminatorType.STRING)
 @DiscriminatorValue("Person")
+@MappedSuperclass
 public abstract class Person implements Serializable {
 
 
