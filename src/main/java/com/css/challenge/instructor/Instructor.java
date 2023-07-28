@@ -11,18 +11,17 @@ import lombok.*;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(of = "id")
 
 public class Instructor extends Person {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+
     private String coordinator;
     private String scrumMaster;
     private String squad;
 
    public Instructor(InstructorRequestDTO data){
+
+        this.idPerson = data.idPerson();
         this.name = data.name();
         this.email = data.email();
         this.emailCompass = data.emailCompass();

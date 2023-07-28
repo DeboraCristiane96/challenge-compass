@@ -5,13 +5,14 @@ import lombok.*;
 
 import java.io.Serializable;
 
-@Getter
-@Setter
-@DiscriminatorColumn(name = "tipo", discriminatorType = DiscriminatorType.STRING)
-@DiscriminatorValue("Person")
+
 @MappedSuperclass
+@Data
 public abstract class Person implements Serializable {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    public Long idPerson;
 
     public String name;
 
