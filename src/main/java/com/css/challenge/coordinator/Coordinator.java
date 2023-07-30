@@ -7,7 +7,10 @@ import com.css.challenge.scrumMaster.ScrumMaster;
 import com.css.challenge.student.Student;
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.Cascade;
+
 import java.util.ArrayList;
+import java.util.List;
 
 @Table(name = "coordinators")
 @DiscriminatorValue(value = "Coordinator")
@@ -18,34 +21,26 @@ import java.util.ArrayList;
 @AllArgsConstructor
 public class Coordinator extends Person {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_coordinator")
+    private Long id;
     //receive list of instructors that are participating
-    private ArrayList<Instructor> instructors = new ArrayList<>();
-    //receive list of students that are participating
-    private ArrayList<Student> students =  new ArrayList<>();
+    @OneToMany
+    @JoinColumn(name = "id_coordinator", referencedColumnName = "id_coordinator", nullable = true)
+    private List<Instructor> instructors;
+
     //the scrumMaster
+    @OneToOne
+    @JoinColumn(name = "id_sm", referencedColumnName = "id_sm", nullable = true)
     private ScrumMaster scrumMaster;
+
+
+
+    @OneToOne()
+    @JoinColumn(name = "id_class", referencedColumnName = "id_class", nullable = true)
     private ClassEntity classEntity;
-    private String squad;
 
-    public Coordinator(CoordinatorRequestDTO data){
-
-        this.idPerson = data.idPerson();
-        this.name = data.name();
-        this.email = data.email();
-        this.emailCompass = data.emailCompass();
-        this.cpf = data.cpf();
-        this.status = data.status();
-        this.birthDay = data.birthDay();
-        this.civilStatus = data.civilStatus();
-        this.sex = data.sex();
-        this.phone = data.phone();
-        this.adress = data.adress();
-        this.zipCode = data.zipCode();
-        this.naturalNess = data.naturalNess();
-        this.scrumMaster = data.scrumMaster();
-        this.squad = data.squad();
-
-    }
 
     //permissions:
     //deletesomeone

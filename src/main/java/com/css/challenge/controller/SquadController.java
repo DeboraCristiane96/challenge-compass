@@ -56,7 +56,7 @@ public class SquadController {
     }
 
     @DeleteMapping("/squads/{id}")
-    public ResponseEntity<Object> deleteClass(@PathVariable(value="id") Long id){
+    public ResponseEntity<Object> deleteSquad(@PathVariable(value="id") Long id){
         Optional<Squad> squadResponse = squadRepository.findById(id);
         if(squadResponse.isEmpty()){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Squad not found.");

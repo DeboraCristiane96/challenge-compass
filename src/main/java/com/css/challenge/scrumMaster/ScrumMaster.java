@@ -8,7 +8,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.ArrayList;
-@Table(name = "scrumMaster")
+@Table(name = "scrumMasters")
 @DiscriminatorValue(value = "ScrumMaster")
 @Entity
 @Getter
@@ -17,6 +17,11 @@ import java.util.ArrayList;
 @AllArgsConstructor
 public class ScrumMaster extends Person {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_sm")
+    private Long id;
+
     //receive list of instructors that are participating
     private ArrayList<Instructor> instructors = new ArrayList<>();
     //receive list of squads that are participating
@@ -24,25 +29,6 @@ public class ScrumMaster extends Person {
     private ClassEntity classEntity;
     private ScrumMaster scrumMaster;
     //private Squad squad;
-
-    public ScrumMaster(ScrumMasterRequestDTO data){
-
-        this.idPerson = data.idPerson();
-        this.name = data.name();
-        this.email = data.email();
-        this.emailCompass = data.emailCompass();
-        this.cpf = data.cpf();
-        this.status = data.status();
-        this.birthDay = data.birthDay();
-        this.civilStatus = data.civilStatus();
-        this.sex = data.sex();
-        this.phone = data.phone();
-        this.adress = data.adress();
-        this.zipCode = data.zipCode();
-        this.naturalNess = data.naturalNess();
-       // this.squad = data.squad();
-
-    }
 
 
 }

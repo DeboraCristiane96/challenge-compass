@@ -14,30 +14,14 @@ import lombok.*;
 
 public class Instructor extends Person {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_instructor")
+    private Long id;
+
     private String coordinator;
     private String scrumMaster;
     private String squad;
-
-   public Instructor(InstructorRequestDTO data){
-
-        this.idPerson = data.idPerson();
-        this.name = data.name();
-        this.email = data.email();
-        this.emailCompass = data.emailCompass();
-        this.cpf = data.cpf();
-        this.status = data.status();
-        this.birthDay = data.birthDay();
-        this.civilStatus = data.civilStatus();
-        this.sex = data.sex();
-        this.phone = data.phone();
-        this.adress = data.adress();
-        this.zipCode = data.zipCode();
-        this.naturalNess = data.naturalNess();
-        this.coordinator = data.coordinator();
-        this.scrumMaster = data.scrumMaster();
-        this.squad = data.squad();
-
-    }
 
     private void receiveQuestion( ){}
 
