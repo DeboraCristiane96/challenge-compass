@@ -14,7 +14,6 @@ import lombok.*;
 
 public class Instructor extends Person {
 
-
     private String coordinator;
     private String scrumMaster;
     private String squad;
