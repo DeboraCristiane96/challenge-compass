@@ -22,7 +22,7 @@ public class CoordinatorController {
 
 
     @PostMapping("coordinators")
-    public ResponseEntity saveInstructor(@RequestBody CoordinatorRequestDTO data){
+    public ResponseEntity saveCoordinator(@RequestBody CoordinatorRequestDTO data){
         try {
             Coordinator coordinatorData = new Coordinator();
             BeanUtils.copyProperties(data, coordinatorData);
@@ -35,13 +35,13 @@ public class CoordinatorController {
     }
 
     @GetMapping("coordinators")
-    public List<Coordinator> getAll(){
+    public List<Coordinator> getAllCoordinators(){
         List<Coordinator> coordinatorList = repository.findAll();
         return coordinatorList;
     }
 
     @GetMapping("/coordinators/{id}")
-    public ResponseEntity<Object> getInstructor(@PathVariable (value = "id") Long id){
+    public ResponseEntity<Object> getCoordinator(@PathVariable (value = "id") Long id){
         Optional<Coordinator> coordinator = repository.findById(id);
         if(coordinator.isEmpty()){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Instructor not found.");
@@ -50,7 +50,7 @@ public class CoordinatorController {
     }
 
     @DeleteMapping("/coordinators/{id}")
-    public ResponseEntity <Object> deleteInstructor(@PathVariable(value = "id") Long id){
+    public ResponseEntity <Object> deleteCoordinator(@PathVariable(value = "id") Long id){
         Optional<Coordinator> Optional = repository.findById(id);
         if(!Optional.isPresent()){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Instructor not found."); }
@@ -58,7 +58,7 @@ public class CoordinatorController {
         return ResponseEntity.status(HttpStatus.OK).body("Instructor deleted successfully."); }
 
     @PutMapping("/coordinators/{id}")
-    public ResponseEntity<Object> updateInstructor(@PathVariable (value = "id") Long id, @RequestBody InstructorRequestDTO data) {
+    public ResponseEntity<Object> updateCoordinator(@PathVariable (value = "id") Long id, @RequestBody InstructorRequestDTO data) {
         Optional<Coordinator> optional = repository.findById(id);
         if (!optional.isPresent()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Instructor not found.");

@@ -15,7 +15,9 @@ public class Squad {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_squad")
     private Long id;
+
     private String name;
     private String instructor;
 

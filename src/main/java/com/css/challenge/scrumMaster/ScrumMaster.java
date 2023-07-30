@@ -17,6 +17,11 @@ import java.util.ArrayList;
 @AllArgsConstructor
 public class ScrumMaster extends Person {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_sm")
+    private Long id;
+
     //receive list of instructors that are participating
     private ArrayList<Instructor> instructors = new ArrayList<>();
     //receive list of squads that are participating

@@ -16,12 +16,17 @@ import lombok.*;
 @EqualsAndHashCode(of = "id")
 public class Student extends Person {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_student")
+    private Long id;
+
     private int period;
     private String course;
     private String college;
 
     @ManyToOne
-    @JoinColumn(name = "id_class", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "id_class", referencedColumnName = "id_class", nullable = false)
     private ClassEntity classEntity;
 
 }

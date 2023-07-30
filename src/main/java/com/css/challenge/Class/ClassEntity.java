@@ -1,7 +1,9 @@
 package com.css.challenge.Class;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
@@ -9,12 +11,16 @@ import java.io.Serializable;
 @Getter
 @Setter
 @Entity
-@Table(name = "CLASS")
+@Table(name = "classes")
+@AllArgsConstructor
+@NoArgsConstructor
 public class ClassEntity implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_class")
     private Long id;
+
     private String name;
     private String dataBegin;
     private String dataEnd;

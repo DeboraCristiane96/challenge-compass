@@ -10,10 +10,6 @@ import java.io.Serializable;
 @Data
 public abstract class Person implements Serializable {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Long idPerson;
-
     public String name;
 
     public String email;

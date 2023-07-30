@@ -14,6 +14,11 @@ import lombok.*;
 
 public class Instructor extends Person {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_instructor")
+    private Long id;
+
     private String coordinator;
     private String scrumMaster;
     private String squad;

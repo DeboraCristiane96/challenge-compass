@@ -18,6 +18,10 @@ import java.util.ArrayList;
 @AllArgsConstructor
 public class Coordinator extends Person {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_coordinator")
+    private Long id;
     //receive list of instructors that are participating
     private String instructor;
     //receive list of students that are participating

@@ -7,12 +7,12 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 
-public record CoordinatorResponseDTO(Long idPerson, String name, String email, String emailCompass, String cpf,
+public record CoordinatorResponseDTO(String name, String email, String emailCompass, String cpf,
                                      boolean status, String birthDay, String civilStatus, Character sex, String phone, String adress, int zipCode,
                                      String naturalNess, String students, ScrumMaster scrumMaster, String squad, ClassEntity classEntity) {
 
     public CoordinatorResponseDTO(@NotNull Coordinator coordinator){
-        this(coordinator.getIdPerson(), coordinator.getName(), coordinator.getEmail(), coordinator.getEmailCompass(),
+        this(coordinator.getName(), coordinator.getEmail(), coordinator.getEmailCompass(),
                 coordinator.getCpf(), coordinator.isStatus(), coordinator.getBirthDay(), coordinator.getCivilStatus(),
                 coordinator.getSex(), coordinator.getPhone(), coordinator.getAdress(), coordinator.getZipCode(), coordinator.getNaturalNess(),
                 coordinator.getStudent(), coordinator.getScrumMaster(), coordinator.getSquad(), coordinator.getClassEntity()
