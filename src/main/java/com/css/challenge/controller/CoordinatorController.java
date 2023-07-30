@@ -55,7 +55,7 @@ public class CoordinatorController {
         return ResponseEntity.status(HttpStatus.OK).body("Instructor deleted successfully."); }
 
     @PutMapping("/coordinators/{id}")
-    public ResponseEntity<Object> updateCoordinator(@PathVariable (value = "id") Long id, @RequestBody InstructorRequestDTO data) {
+    public ResponseEntity<Object> updateCoordinator(@PathVariable (value = "id") Long id, @RequestBody CoordinatorRequestDTO data) {
         Optional<Coordinator> optional = repository.findById(id);
         if (!optional.isPresent()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Instructor not found.");

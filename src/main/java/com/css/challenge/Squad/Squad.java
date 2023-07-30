@@ -1,5 +1,7 @@
 package com.css.challenge.Squad;
 
+import com.css.challenge.Class.ClassEntity;
+import com.css.challenge.coordinator.Coordinator;
 import com.css.challenge.student.Student;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -24,4 +26,5 @@ public class Squad {
     @OneToMany
     @JoinColumn(name = "id_squad")
     private List<Student> students;
+
 }
