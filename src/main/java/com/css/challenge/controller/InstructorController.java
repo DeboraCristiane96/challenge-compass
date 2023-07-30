@@ -1,12 +1,8 @@
 package com.css.challenge.controller;
 
-import com.css.challenge.Class.ClassEntity;
-import com.css.challenge.Class.ClassRecordDTO;
 import com.css.challenge.Repository.InstructorRepository;
 import com.css.challenge.instructor.Instructor;
 import com.css.challenge.instructor.InstructorRequestDTO;
-import com.css.challenge.instructor.InstructorResponseDTO;
-import jakarta.validation.Valid;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

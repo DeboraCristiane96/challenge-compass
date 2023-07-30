@@ -1,11 +1,8 @@
 package com.css.challenge.controller;
 
 import com.css.challenge.Repository.CoordinatorRepository;
-import com.css.challenge.Repository.InstructorRepository;
 import com.css.challenge.coordinator.Coordinator;
 import com.css.challenge.coordinator.CoordinatorRequestDTO;
-import com.css.challenge.coordinator.CoordinatorResponseDTO;
-import com.css.challenge.instructor.Instructor;
 import com.css.challenge.instructor.InstructorRequestDTO;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
