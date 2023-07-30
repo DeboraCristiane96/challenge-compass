@@ -21,7 +21,6 @@ public class Squad {
     private Long id;
 
     private String name;
-    private String instructor;
 
     @OneToMany
     @JoinColumn(name = "id_squad")

@@ -22,13 +22,10 @@ public class ScrumMaster extends Person {
     @Column(name = "id_sm")
     private Long id;
 
-    //receive list of instructors that are participating
-    private ArrayList<Instructor> instructors = new ArrayList<>();
-    //receive list of squads that are participating
-    //private ArrayList<Squad> squads = new ArrayList<>();
+
+    @OneToOne
+    @JoinColumn(name = "id_class", referencedColumnName = "id_class", nullable = true)
     private ClassEntity classEntity;
-    private ScrumMaster scrumMaster;
-    //private Squad squad;
 
 
 }

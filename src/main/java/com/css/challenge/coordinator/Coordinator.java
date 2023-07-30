@@ -35,8 +35,6 @@ public class Coordinator extends Person {
     @JoinColumn(name = "id_sm", referencedColumnName = "id_sm", nullable = true)
     private ScrumMaster scrumMaster;
 
-
-
     @OneToOne()
     @JoinColumn(name = "id_class", referencedColumnName = "id_class", nullable = true)
     private ClassEntity classEntity;
