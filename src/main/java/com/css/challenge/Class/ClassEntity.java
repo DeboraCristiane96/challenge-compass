@@ -18,6 +18,6 @@ public class ClassEntity implements Serializable {
     private String name;
     private String dataBegin;
     private String dataEnd;
-    private String tecnology;
+    private String technology;
     private String partners;
 }

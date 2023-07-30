@@ -1,4 +1,8 @@
 package com.css.challenge.Squad;
 
-public record SquadRecordDTO(String name, String students, String instructor) {
+import com.css.challenge.student.Student;
+
+import java.util.List;
+
+public record SquadRecordDTO(String name, String instructor, List<Student> students) {
 }
