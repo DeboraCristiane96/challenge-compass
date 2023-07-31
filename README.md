@@ -1,4 +1,7 @@
 # challenge-compass
+Developed a RESTful API using the Spring Boot framework in Java.
+The application is capable to register  for Compass Scholarship Program classes, using basic operations of the HTTP :
+GET, POST, PUT and DELETE.
 
 # Autores
 
