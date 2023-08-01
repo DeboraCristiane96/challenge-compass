@@ -1,8 +1,8 @@
-package com.css.challenge.controller;
+package com.css.challenge.presentation.controller;
 
-import com.css.challenge.Class.ClassEntity;
-import com.css.challenge.Class.ClassRecordDTO;
-import com.css.challenge.Repository.ClassRepository;
+import com.css.challenge.model.entity.ClassEntity;
+import com.css.challenge.presentation.dto.ClassRecordDTO;
+import com.css.challenge.model.repository.ClassRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +11,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Objects;
 import java.util.Optional;
 
 @RestController

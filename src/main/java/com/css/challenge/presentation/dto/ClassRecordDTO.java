@@ -1,4 +1,4 @@
-package com.css.challenge.Class;
+package com.css.challenge.presentation.dto;
 
 
 import jakarta.validation.constraints.NotBlank;

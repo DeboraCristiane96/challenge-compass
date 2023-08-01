@@ -1,4 +1,4 @@
-package com.css.challenge.Class;
+package com.css.challenge.model.entity;
 
 import jakarta.persistence.*;
 

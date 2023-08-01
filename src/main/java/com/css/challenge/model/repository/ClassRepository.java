@@ -1,6 +1,6 @@
-package com.css.challenge.Repository;
+package com.css.challenge.model.repository;
 
-import com.css.challenge.Class.ClassEntity;
+import com.css.challenge.model.entity.ClassEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

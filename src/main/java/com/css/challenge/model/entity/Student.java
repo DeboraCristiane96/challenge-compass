@@ -1,6 +1,6 @@
-package com.css.challenge.student;
+package com.css.challenge.model.entity;
 
-import com.css.challenge.interfaces.Person;
+import com.css.challenge.model.interfaces.Person;
 import jakarta.persistence.*;
 import lombok.*;
 
