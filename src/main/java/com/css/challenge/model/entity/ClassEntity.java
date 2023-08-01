@@ -1,68 +1,30 @@
 package com.css.challenge.model.entity;
 
+import com.css.challenge.coordinator.Coordinator;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.io.Serializable;
 
-
+@Getter
+@Setter
 @Entity
-@Table(name = "CLASS")
+@Table(name = "classes")
+@AllArgsConstructor
+@NoArgsConstructor
 public class ClassEntity implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_class")
     private Long id;
+
     private String name;
     private String dataBegin;
     private String dataEnd;
-    private String tecnology;
+    private String technology;
     private String partners;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDataBegin() {
-        return dataBegin;
-    }
-
-    public void setDataBegin(String dataBegin) {
-        this.dataBegin = dataBegin;
-    }
-
-    public String getDataEnd() {
-        return dataEnd;
-    }
-
-    public void setDataEnd(String dataEnd) {
-        this.dataEnd = dataEnd;
-    }
-
-    public String getTecnology() {
-        return tecnology;
-    }
-
-    public void setTecnology(String tecnology) {
-        this.tecnology = tecnology;
-    }
-
-    public String getPartners() {
-        return partners;
-    }
-
-    public void setPartners(String partners) {
-        this.partners = partners;
-    }
 }
