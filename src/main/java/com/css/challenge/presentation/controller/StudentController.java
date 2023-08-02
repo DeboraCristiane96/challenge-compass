@@ -1,13 +1,8 @@
 package com.css.challenge.presentation.controller;
 
-<<<<<<< HEAD:src/main/java/com/css/challenge/presentation/controller/StudentController.java
 import com.css.challenge.model.repository.StudentRepository;
 import com.css.challenge.model.entity.Student;
 import com.css.challenge.presentation.dto.StudentRecordDTO;
-=======
-import com.css.challenge.Repository.StudentRepository;
-import com.css.challenge.student.*;
->>>>>>> f44d0b0a440f7cda3096fe2567b0c5eeb20f719f:src/main/java/com/css/challenge/controller/StudentController.java
 import jakarta.validation.Valid;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;

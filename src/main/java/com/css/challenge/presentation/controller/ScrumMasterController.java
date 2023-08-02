@@ -1,9 +1,6 @@
-package com.css.challenge.controller;
+package com.css.challenge.presentation.controller;
 
-import com.css.challenge.Class.ClassEntity;
-import com.css.challenge.Class.ClassRecordDTO;
-import com.css.challenge.Repository.ClassRepository;
-import com.css.challenge.Repository.ScrumMasterRepository;
+import com.css.challenge.model.repository.ScrumMasterRepository;
 import com.css.challenge.scrumMaster.ScrumMaster;
 import com.css.challenge.scrumMaster.ScrumMasterRequestDTO;
 import jakarta.validation.Valid;
@@ -32,7 +29,7 @@ public class ScrumMasterController {
     public ResponseEntity<Object> getOneSM(@PathVariable(value="id") Long id){
         Optional<ScrumMaster> scrumMaster = scrumMasterRepository.findById(id);
         if(scrumMaster.isEmpty()){
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Class not found.");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("SM not found.");
         }
         return ResponseEntity.status(HttpStatus.OK).body(scrumMaster.get());
     }
@@ -49,7 +46,7 @@ public class ScrumMasterController {
                                               @RequestBody @Valid ScrumMasterRequestDTO scrumMasterRequestDTO){
         Optional<ScrumMaster> scrumMasterResponse = scrumMasterRepository.findById(id);
         if(scrumMasterResponse.isEmpty()){
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Class not found.");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("SM not found.");
         }
         ScrumMaster scrumMaster = scrumMasterResponse.get();
         BeanUtils.copyProperties(scrumMasterRequestDTO, scrumMaster);
@@ -60,9 +57,9 @@ public class ScrumMasterController {
     public ResponseEntity<Object> deleteSM(@PathVariable(value="id") Long id){
         Optional<ScrumMaster> scrumMasterResponse = scrumMasterRepository.findById(id);
         if(scrumMasterResponse.isEmpty()){
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Class not found.");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("SM not found.");
         }
         scrumMasterRepository.delete(scrumMasterResponse.get());
-        return ResponseEntity.status(HttpStatus.OK).body("Class deleted successfully");
+        return ResponseEntity.status(HttpStatus.OK).body("SM deleted successfully");
     }
 }

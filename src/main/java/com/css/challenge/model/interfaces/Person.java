@@ -10,14 +10,7 @@ import java.io.Serializable;
 @Data
 public abstract class Person implements Serializable {
 
-<<<<<<< HEAD:src/main/java/com/css/challenge/model/interfaces/Person.java
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Long idPerson;
-
     @Column(nullable = false)
-=======
->>>>>>> f44d0b0a440f7cda3096fe2567b0c5eeb20f719f:src/main/java/com/css/challenge/interfaces/Person.java
     public String name;
 
     @Column(nullable = false)

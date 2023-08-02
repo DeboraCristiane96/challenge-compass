@@ -16,6 +16,11 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
 
 public class Instructor extends Person {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_instructor")
+    private Long id;
+
    @Column(nullable = false)
     private String coordinator;
     @Column(nullable = false)
@@ -25,7 +30,7 @@ public class Instructor extends Person {
 
    public Instructor(InstructorRequestDTO data){
 
-        this.idPerson = data.idPerson();
+        this.id = data.idPerson();
         this.name = data.name();
         this.email = data.email();
         this.emailCompass = data.emailCompass();
@@ -45,11 +50,11 @@ public class Instructor extends Person {
     }
 
 
-    public Instructor(Long idPerson, String name, String email, String emailCompass,String cpf, boolean status , String birthDay,
+    public Instructor(Long id, String name, String email, String emailCompass,String cpf, boolean status , String birthDay,
                       String civilStatus,Character sex,String phone, String adress, int zipCode, String naturalNess,
                       String coordinator, String scrumMaster, String squad ) {
 
-        this.idPerson = idPerson;
+        this.id = id;
         this.name = name;
         this.email = email;
         this.emailCompass = emailCompass;
@@ -72,6 +77,7 @@ public class Instructor extends Person {
    private String answerQuestion( ) {return "...";}
 
 
+
     @Override
     public boolean equals(Object obj) {
         return EqualsBuilder.reflectionEquals(obj, this);
@@ -83,7 +89,7 @@ public class Instructor extends Person {
                 "coordinator='" + coordinator + '\'' +
                 ", scrumMaster='" + scrumMaster + '\'' +
                 ", squad='" + squad + '\'' +
-                ", idPerson=" + idPerson +
+                ", idPerson=" + id +
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", emailCompass='" + emailCompass + '\'' +

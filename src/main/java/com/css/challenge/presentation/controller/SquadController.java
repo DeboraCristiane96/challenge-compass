@@ -1,11 +1,8 @@
-package com.css.challenge.controller;
+package com.css.challenge.presentation.controller;
 
-import com.css.challenge.Class.ClassEntity;
-import com.css.challenge.Class.ClassRecordDTO;
-import com.css.challenge.Repository.SquadRepository;
-import com.css.challenge.Squad.Squad;
-import com.css.challenge.Squad.SquadRecordDTO;
-import jakarta.validation.Valid;
+import com.css.challenge.model.entity.Squad;
+import com.css.challenge.model.repository.SquadRepository;
+import com.css.challenge.presentation.dto.SquadRecordDTO;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -62,7 +59,7 @@ public class SquadController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Squad not found.");
         }
         squadRepository.delete(squadResponse.get());
-        return ResponseEntity.status(HttpStatus.OK).body("Class deleted successfully");
+        return ResponseEntity.status(HttpStatus.OK).body("Squad deleted successfully");
     }
 
 

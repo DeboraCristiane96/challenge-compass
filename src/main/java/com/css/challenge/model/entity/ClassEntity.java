@@ -1,6 +1,5 @@
 package com.css.challenge.model.entity;
 
-import com.css.challenge.coordinator.Coordinator;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

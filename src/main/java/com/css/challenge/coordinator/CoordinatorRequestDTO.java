@@ -1,9 +1,9 @@
 package com.css.challenge.coordinator;
 
-import com.css.challenge.Class.ClassEntity;
-import com.css.challenge.instructor.Instructor;
+
+import com.css.challenge.model.entity.ClassEntity;
+import com.css.challenge.model.entity.Instructor;
 import com.css.challenge.scrumMaster.ScrumMaster;
-import com.css.challenge.student.Student;
 
 import java.util.List;
 

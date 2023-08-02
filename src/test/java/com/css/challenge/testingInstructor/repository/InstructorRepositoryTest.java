@@ -26,12 +26,12 @@ public class InstructorRepositoryTest {
 
         Instructor instructor = instructorRepository.save(INSTRUCTOR);
 
-        Instructor sut = testEntityManager.find(Instructor.class, instructor.getIdPerson());
+        Instructor sut = testEntityManager.find(Instructor.class, instructor.getId());
 
         System.out.println(sut.toString());
 
         assertThat(sut).isNotNull();
-        assertThat(sut.getName()).isEqualTo(INSTRUCTOR.getIdPerson());
+        assertThat(sut.getName()).isEqualTo(INSTRUCTOR.getId());
         assertThat(sut.getName()).isEqualTo(INSTRUCTOR.getName());
         assertThat(sut.getEmail()).isEqualTo(INSTRUCTOR.getName());
         assertThat(sut.getEmailCompass()).isEqualTo(INSTRUCTOR.getName());
@@ -63,7 +63,7 @@ public class InstructorRepositoryTest {
     public void createInstructor_WithExistingName_ThrowsException() {
         Instructor instructor = testEntityManager.persistFlushFind(INSTRUCTOR);
         testEntityManager.detach(instructor);
-        instructor.setIdPerson(null);
+        instructor.setId(null);
 
         assertThatThrownBy(() -> instructorRepository.save(instructor)).isInstanceOf(RuntimeException.class);
     }

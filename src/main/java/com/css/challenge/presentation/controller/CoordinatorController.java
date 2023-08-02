@@ -1,9 +1,9 @@
-package com.css.challenge.controller;
+package com.css.challenge.presentation.controller;
 
-import com.css.challenge.Repository.CoordinatorRepository;
+
 import com.css.challenge.coordinator.Coordinator;
 import com.css.challenge.coordinator.CoordinatorRequestDTO;
-import com.css.challenge.instructor.InstructorRequestDTO;
+import com.css.challenge.model.repository.CoordinatorRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -41,7 +41,7 @@ public class CoordinatorController {
     public ResponseEntity<Object> getCoordinator(@PathVariable (value = "id") Long id){
         Optional<Coordinator> coordinator = repository.findById(id);
         if(coordinator.isEmpty()){
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Instructor not found.");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Coordinator not found.");
         }
         return ResponseEntity.status(HttpStatus.OK).body(coordinator.get());
     }
@@ -50,15 +50,15 @@ public class CoordinatorController {
     public ResponseEntity <Object> deleteCoordinator(@PathVariable(value = "id") Long id){
         Optional<Coordinator> Optional = repository.findById(id);
         if(!Optional.isPresent()){
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Instructor not found."); }
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Coordinator not found."); }
         repository.delete(Optional.get());
-        return ResponseEntity.status(HttpStatus.OK).body("Instructor deleted successfully."); }
+        return ResponseEntity.status(HttpStatus.OK).body("Coordinator deleted successfully."); }
 
     @PutMapping("/coordinators/{id}")
     public ResponseEntity<Object> updateCoordinator(@PathVariable (value = "id") Long id, @RequestBody CoordinatorRequestDTO data) {
         Optional<Coordinator> optional = repository.findById(id);
         if (!optional.isPresent()) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Instructor not found.");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Coordinator not found.");
         }
         Coordinator coordinatorData = optional.get();
         BeanUtils.copyProperties(data, coordinatorData);

@@ -1,14 +1,11 @@
 package com.css.challenge.presentation.controller;
 
 import com.css.challenge.model.entity.Instructor;
-import com.css.challenge.model.repository.InstructorRepository;
 import com.css.challenge.presentation.dto.InstructorRequestDTO;
-import com.css.challenge.presentation.dto.InstructorResponseDTO;
 import com.css.challenge.buiness.service.InstructorService;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Example;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

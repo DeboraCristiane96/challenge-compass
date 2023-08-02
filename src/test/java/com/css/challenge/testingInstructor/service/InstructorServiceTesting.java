@@ -58,10 +58,10 @@ public class InstructorServiceTesting {
      public void getInstructor_ByExistingID_ReturnsInstructor(){
 
         // Arrange
-         when(instructorRepository.findById(INSTRUCTOR.idPerson)).thenReturn(Optional.of(INSTRUCTOR));
+         when(instructorRepository.findById(INSTRUCTOR.getId())).thenReturn(Optional.of(INSTRUCTOR));
 
          // Act
-         Optional<Instructor>  sut = instructorService.findById(INSTRUCTOR.idPerson);
+         Optional<Instructor>  sut = instructorService.findById(INSTRUCTOR.getId());
 
          //Assert
          assertThat(sut).isNotEmpty();
@@ -71,10 +71,10 @@ public class InstructorServiceTesting {
      public void getInstructor_ByUnexistingId_ReturnEmpty(){
 
          // Arrange
-         when(instructorRepository.findById(INSTRUCTOR.idPerson)).thenReturn(Optional.empty());
+         when(instructorRepository.findById(INSTRUCTOR.getId())).thenReturn(Optional.empty());
 
          // Act
-         Optional<Instructor> sut = instructorService.findById(INSTRUCTOR.idPerson);
+         Optional<Instructor> sut = instructorService.findById(INSTRUCTOR.getId());
 
          //Assert
          assertThat(sut).isEmpty();

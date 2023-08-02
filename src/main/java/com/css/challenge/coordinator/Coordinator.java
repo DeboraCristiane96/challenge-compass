@@ -1,15 +1,13 @@
 package com.css.challenge.coordinator;
 
-import com.css.challenge.Class.ClassEntity;
-import com.css.challenge.instructor.Instructor;
-import com.css.challenge.interfaces.Person;
+
+import com.css.challenge.model.entity.ClassEntity;
+import com.css.challenge.model.entity.Instructor;
+import com.css.challenge.model.interfaces.Person;
 import com.css.challenge.scrumMaster.ScrumMaster;
-import com.css.challenge.student.Student;
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.annotations.Cascade;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Table(name = "coordinators")
@@ -26,9 +24,11 @@ public class Coordinator extends Person {
     @Column(name = "id_coordinator")
     private Long id;
     //receive list of instructors that are participating
+
     @OneToMany
     @JoinColumn(name = "id_coordinator", referencedColumnName = "id_coordinator", nullable = true)
     private List<Instructor> instructors;
+
 
     //the scrumMaster
     @OneToOne
