@@ -27,4 +27,23 @@ public class ClassEntity implements Serializable {
     private String dataEnd;
     private String technology;
     private String partners;
+
+    public ClassEntity(String name, String dataBegin, String dataEnd, String technology, String partners) {
+        this.name = name;
+        this.dataBegin = dataBegin;
+        this.dataEnd = dataEnd;
+        this.technology = technology;
+        this.partners = partners;
+    }
+
+    /*
+    public ClassEntity(Long id, String name, String dataBegin, String dataEnd, String technology, String partners) {
+        this.id = id;
+        this.name = name;
+        this.dataBegin = dataBegin;
+        this.dataEnd = dataEnd;
+        this.technology = technology;
+        this.partners = partners;
+    }
+     */
 }
