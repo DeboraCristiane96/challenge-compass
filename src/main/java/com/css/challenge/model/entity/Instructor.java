@@ -30,7 +30,7 @@ public class Instructor extends Person {
 
    public Instructor(InstructorRequestDTO data){
 
-        this.id = data.idPerson();
+        this.id = data.id();
         this.name = data.name();
         this.email = data.email();
         this.emailCompass = data.emailCompass();
