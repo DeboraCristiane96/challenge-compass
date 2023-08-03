@@ -6,13 +6,16 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.data.jdbc.DataJdbcTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
+import org.springframework.boot.test.context.SpringBootTest;
 
 
+import static com.css.challenge.common.InstructorConstants.INVALID_INSTRUCTOR;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static com.css.challenge.common.InstructorConstants.INSTRUCTOR;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 
 @DataJdbcTest
+@SpringBootTest(classes = InstructorRepository.class)
 public class InstructorRepositoryTest {
 
     @Autowired
@@ -31,19 +34,23 @@ public class InstructorRepositoryTest {
         System.out.println(sut.toString());
 
         assertThat(sut).isNotNull();
+<<<<<<< HEAD
+
+=======
         assertThat(sut.getName()).isEqualTo(INSTRUCTOR.getId());
+>>>>>>> b283c0321cdaa8a66bdb20cb8506d449b7e512fc
         assertThat(sut.getName()).isEqualTo(INSTRUCTOR.getName());
-        assertThat(sut.getEmail()).isEqualTo(INSTRUCTOR.getName());
-        assertThat(sut.getEmailCompass()).isEqualTo(INSTRUCTOR.getName());
-        assertThat(sut.getCpf()).isEqualTo(INSTRUCTOR.getName());
-        assertThat(sut.getBirthDay()).isEqualTo(INSTRUCTOR.getName());
-        assertThat(sut.getCivilStatus()).isEqualTo(INSTRUCTOR.getName());
-        assertThat(sut.getSex()).isEqualTo(INSTRUCTOR.getName());
-        assertThat(sut.getPhone()).isEqualTo(INSTRUCTOR.getName());
-        assertThat(sut.getAdress()).isEqualTo(INSTRUCTOR.getName());
-        assertThat(sut.getZipCode()).isEqualTo(INSTRUCTOR.getName());
-        assertThat(sut.getNaturalNess()).isEqualTo(INSTRUCTOR.getName());
-        assertThat(sut.getCoordinator()).isEqualTo(INSTRUCTOR.getName());
+        assertThat(sut.getEmail()).isEqualTo(INSTRUCTOR.getEmail());
+        assertThat(sut.getEmailCompass()).isEqualTo(INSTRUCTOR.getEmailCompass());
+        assertThat(sut.getCpf()).isEqualTo(INSTRUCTOR.getCpf());
+        assertThat(sut.getBirthDay()).isEqualTo(INSTRUCTOR.getBirthDay());
+        assertThat(sut.getCivilStatus()).isEqualTo(INSTRUCTOR.getCivilStatus());
+        assertThat(sut.getSex()).isEqualTo(INSTRUCTOR.getSex());
+        assertThat(sut.getPhone()).isEqualTo(INSTRUCTOR.getPhone());
+        assertThat(sut.getAdress()).isEqualTo(INSTRUCTOR.getAdress());
+        assertThat(sut.getZipCode()).isEqualTo(INSTRUCTOR.getZipCode());
+        assertThat(sut.getNaturalNess()).isEqualTo(INSTRUCTOR.getNaturalNess());
+        assertThat(sut.getCoordinator()).isEqualTo(INSTRUCTOR.getCoordinator());
         assertThat(sut.getScrumMaster()).isEqualTo(INSTRUCTOR.getScrumMaster());
         assertThat(sut.getSquad()).isEqualTo(INSTRUCTOR.getSquad());
 
@@ -52,15 +59,14 @@ public class InstructorRepositoryTest {
     @Test
     public void createInstructor_WithInvalidData_ThrowsException() {
         Instructor emptyInstructor = new Instructor();
-        Instructor invalidInstructor = new Instructor(2L,"","","","",false
-                ,"","",' ',"","",0,"","","","");
 
         assertThatThrownBy(() -> instructorRepository.save(emptyInstructor)).isInstanceOf(RuntimeException.class);
-        assertThatThrownBy(() -> instructorRepository.save(invalidInstructor)).isInstanceOf(RuntimeException.class);
+        assertThatThrownBy(() -> instructorRepository.save(INVALID_INSTRUCTOR)).isInstanceOf(RuntimeException.class);
     }
 
     @Test
     public void createInstructor_WithExistingName_ThrowsException() {
+
         Instructor instructor = testEntityManager.persistFlushFind(INSTRUCTOR);
         testEntityManager.detach(instructor);
         instructor.setId(null);
