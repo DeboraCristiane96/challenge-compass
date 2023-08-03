@@ -35,7 +35,7 @@ public class StudentController {
     }
 
     @PutMapping("/students/{id}")
-    public ResponseEntity<Object> updateStudent(@PathVariable(value = "id") Long id, @RequestBody @Valid StudentRecordDTO studentRecordDTO){
+    public ResponseEntity<Object> updateStudent(@PathVariable(value = "id") Long id, @RequestBody StudentRecordDTO studentRecordDTO){
         Optional<Student> studentResponse = studentRepository.findById(id);
         if (studentResponse.isEmpty()){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Student wasn't found.");
@@ -57,7 +57,7 @@ public class StudentController {
 
 
     @PostMapping("/students")
-    public ResponseEntity<Student> saveStudent(@RequestBody @Valid StudentRecordDTO studentRecordDTO){
+    public ResponseEntity<Student> saveStudent(@RequestBody StudentRecordDTO studentRecordDTO){
         Student studentObj = new Student();
         BeanUtils.copyProperties(studentRecordDTO, studentObj);
         return ResponseEntity.status(HttpStatus.CREATED).body(studentRepository.save(studentObj));
