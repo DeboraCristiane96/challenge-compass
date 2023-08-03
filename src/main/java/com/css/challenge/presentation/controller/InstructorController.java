@@ -1,14 +1,11 @@
 package com.css.challenge.presentation.controller;
 
 import com.css.challenge.model.entity.Instructor;
-import com.css.challenge.model.repository.InstructorRepository;
 import com.css.challenge.presentation.dto.InstructorRequestDTO;
-import com.css.challenge.presentation.dto.InstructorResponseDTO;
 import com.css.challenge.buiness.service.InstructorService;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Example;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -23,8 +20,8 @@ public class InstructorController {
 
 
     @PostMapping
-    public ResponseEntity<Instructor> create(@RequestBody @Valid Instructor instructor) {
-        Instructor instructorCreated = instructorService.createInstructor(instructor);
+    public ResponseEntity<Instructor> create(@RequestBody @Valid Instructor data) {
+        Instructor instructorCreated = instructorService.createInstructor(data);
         return ResponseEntity.status(HttpStatus.CREATED).body(instructorCreated);
     }
 
@@ -41,19 +38,19 @@ public class InstructorController {
     }
 
     @GetMapping("name/{name}")
-    public ResponseEntity<Instructor> getBName(@PathVariable("name") String name){
+    public ResponseEntity<Instructor> getByName(@PathVariable("name") String name){
         return instructorService.getByName(name).map(instructor ->ResponseEntity.ok(instructor))
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> remove(@PathVariable("id") Long id) {
+    public ResponseEntity<Object> remove(@PathVariable("id") Long id) {
         instructorService.delete(id);
         return ResponseEntity.noContent().build();
     }
     @PutMapping("{id}")
-    public ResponseEntity<Instructor> updateInstructor(@PathVariable Long id, @RequestBody InstructorRequestDTO data ) {
+    public ResponseEntity<Object> updateInstructor(@PathVariable Long id, @RequestBody InstructorRequestDTO data ) {
         try {
             Instructor instructorUpdate = instructorService.updateInstructor(id, data);
             return ResponseEntity.ok(instructorUpdate);

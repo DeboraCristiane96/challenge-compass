@@ -25,18 +25,21 @@ public class Instructor extends Person {
 
    public Instructor(InstructorRequestDTO data){
 
-        this.idPerson = data.idPerson();
+
         this.name = data.name();
         this.email = data.email();
         this.emailCompass = data.emailCompass();
         this.cpf = data.cpf();
+
         this.status = data.status();
         this.birthDay = data.birthDay();
         this.civilStatus = data.civilStatus();
         this.sex = data.sex();
+
         this.phone = data.phone();
         this.adress = data.adress();
         this.zipCode = data.zipCode();
+
         this.naturalNess = data.naturalNess();
         this.coordinator = data.coordinator();
         this.scrumMaster = data.scrumMaster();
@@ -44,28 +47,49 @@ public class Instructor extends Person {
 
     }
 
-
-    public Instructor(Long idPerson, String name, String email, String emailCompass,String cpf, boolean status , String birthDay,
+    public Instructor( String name, String email, String emailCompass,String cpf, boolean status , String birthDay,
                       String civilStatus,Character sex,String phone, String adress, int zipCode, String naturalNess,
                       String coordinator, String scrumMaster, String squad ) {
 
-        this.idPerson = idPerson;
+
         this.name = name;
         this.email = email;
         this.emailCompass = emailCompass;
+
         this.cpf = cpf;
         this.status = status;
         this.birthDay = birthDay;
         this.civilStatus = civilStatus;
+
         this.sex = sex;
         this.phone = phone;
         this.adress = adress;
         this.zipCode = zipCode;
+
         this.naturalNess = naturalNess;
         this.coordinator = coordinator;
         this.scrumMaster = scrumMaster;
         this.squad = squad;
    }
+
+    public Instructor(String name, String email, String emailCompass, String cpf, String birthDay, String civilStatus, char sex, String phone, String naturalNess, String coordinator, String scrumMaster, String squad) {
+
+        this.name = name;
+        this.email = email;
+        this.emailCompass = emailCompass;
+        this.cpf = cpf;
+
+        this.birthDay = birthDay;
+        this.civilStatus = civilStatus;
+        this.sex = sex;
+        this.phone = phone;
+
+        this.naturalNess = naturalNess;
+        this.coordinator = coordinator;
+        this.scrumMaster = scrumMaster;
+        this.squad = squad;
+   }
+
 
     private void receiveQuestion( ){}
 

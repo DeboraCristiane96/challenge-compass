@@ -1,11 +1,8 @@
-package com.css.challenge.controller;
+package com.css.challenge.presentation.controller;
 
-import com.css.challenge.Class.ClassEntity;
-import com.css.challenge.Class.ClassRecordDTO;
-import com.css.challenge.Repository.SquadRepository;
-import com.css.challenge.Squad.Squad;
-import com.css.challenge.Squad.SquadRecordDTO;
-import jakarta.validation.Valid;
+import com.css.challenge.model.entity.Squad;
+import com.css.challenge.model.repository.SquadRepository;
+import com.css.challenge.presentation.dto.SquadRecordDTO;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
+
 
 @RestController
 @RequestMapping("css/api")

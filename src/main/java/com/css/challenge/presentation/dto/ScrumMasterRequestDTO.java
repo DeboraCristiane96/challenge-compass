@@ -1,7 +1,7 @@
-package com.css.challenge.scrumMaster;
+package com.css.challenge.presentation.dto;
 
-import com.css.challenge.Class.ClassEntity;
-import com.css.challenge.instructor.Instructor;
+
+import com.css.challenge.model.entity.ClassEntity;
 //import com.css.challenge.squad.Squad;
 
 public record ScrumMasterRequestDTO( String name, String email, String emailCompass, String cpf,

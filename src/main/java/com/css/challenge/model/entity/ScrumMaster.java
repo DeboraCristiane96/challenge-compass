@@ -1,8 +1,8 @@
-package com.css.challenge.scrumMaster;
+package com.css.challenge.model.entity;
 
-import com.css.challenge.Class.ClassEntity;
-import com.css.challenge.instructor.Instructor;
-import com.css.challenge.interfaces.Person;
+
+import com.css.challenge.model.entity.ClassEntity;
+import com.css.challenge.model.interfaces.Person;
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.*;
 import lombok.*;
