@@ -11,16 +11,8 @@ import java.io.Serializable;
 @Data
 public abstract class Person implements Serializable {
 
-<<<<<<< HEAD
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Long idPerson;
 
-    @NotEmpty
-    @Column(nullable = false, unique = true)
-=======
     @Column(nullable = false)
->>>>>>> b283c0321cdaa8a66bdb20cb8506d449b7e512fc
     public String name;
 
     @NotEmpty

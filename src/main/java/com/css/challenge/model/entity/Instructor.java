@@ -95,6 +95,9 @@ public class Instructor extends Person {
         this.squad = squad;
    }
 
+    public Instructor(String victor, String mail, String mail1, String s, boolean b, String s1, String solteiro, char m, String s2, String recife, int i, String recife1, String joão, String mariana, String css) {
+    }
+
 
     private void receiveQuestion( ){}
 

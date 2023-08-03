@@ -34,11 +34,9 @@ public class InstructorRepositoryTest {
         System.out.println(sut.toString());
 
         assertThat(sut).isNotNull();
-<<<<<<< HEAD
 
-=======
         assertThat(sut.getName()).isEqualTo(INSTRUCTOR.getId());
->>>>>>> b283c0321cdaa8a66bdb20cb8506d449b7e512fc
+
         assertThat(sut.getName()).isEqualTo(INSTRUCTOR.getName());
         assertThat(sut.getEmail()).isEqualTo(INSTRUCTOR.getEmail());
         assertThat(sut.getEmailCompass()).isEqualTo(INSTRUCTOR.getEmailCompass());

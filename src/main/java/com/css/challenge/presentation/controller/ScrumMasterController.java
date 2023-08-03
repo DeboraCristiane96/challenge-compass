@@ -1,15 +1,8 @@
-<<<<<<< HEAD
-
-import com.css.challenge.Repository.ScrumMasterRepository;
-import com.css.challenge.model.entity.ScrumMaster;
-import com.css.challenge.presentation.dto.ScrumMasterRequestDTO;
-=======
 package com.css.challenge.presentation.controller;
 
+import com.css.challenge.model.entity.ScrumMaster;
+import com.css.challenge.presentation.dto.ScrumMasterRequestDTO;
 import com.css.challenge.model.repository.ScrumMasterRepository;
-import com.css.challenge.scrumMaster.ScrumMaster;
-import com.css.challenge.scrumMaster.ScrumMasterRequestDTO;
->>>>>>> b283c0321cdaa8a66bdb20cb8506d449b7e512fc
 import jakarta.validation.Valid;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;

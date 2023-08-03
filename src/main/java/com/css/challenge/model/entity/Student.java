@@ -1,12 +1,7 @@
 package com.css.challenge.model.entity;
 
-<<<<<<< HEAD
-import com.css.challenge.model.interfaces.Person;
-=======
-
 import com.css.challenge.model.interfaces.Person;
 
->>>>>>> b283c0321cdaa8a66bdb20cb8506d449b7e512fc
 import jakarta.persistence.*;
 import lombok.*;
 
