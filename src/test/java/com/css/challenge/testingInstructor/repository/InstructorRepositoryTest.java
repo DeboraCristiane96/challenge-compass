@@ -29,12 +29,16 @@ public class InstructorRepositoryTest {
 
         Instructor instructor = instructorRepository.save(INSTRUCTOR);
 
-        Instructor sut = testEntityManager.find(Instructor.class, instructor.getIdPerson());
+        Instructor sut = testEntityManager.find(Instructor.class, instructor.getId());
 
         System.out.println(sut.toString());
 
         assertThat(sut).isNotNull();
+<<<<<<< HEAD
 
+=======
+        assertThat(sut.getName()).isEqualTo(INSTRUCTOR.getId());
+>>>>>>> b283c0321cdaa8a66bdb20cb8506d449b7e512fc
         assertThat(sut.getName()).isEqualTo(INSTRUCTOR.getName());
         assertThat(sut.getEmail()).isEqualTo(INSTRUCTOR.getEmail());
         assertThat(sut.getEmailCompass()).isEqualTo(INSTRUCTOR.getEmailCompass());
@@ -65,7 +69,7 @@ public class InstructorRepositoryTest {
 
         Instructor instructor = testEntityManager.persistFlushFind(INSTRUCTOR);
         testEntityManager.detach(instructor);
-        instructor.setIdPerson(null);
+        instructor.setId(null);
 
         assertThatThrownBy(() -> instructorRepository.save(instructor)).isInstanceOf(RuntimeException.class);
     }

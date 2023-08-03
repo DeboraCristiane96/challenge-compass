@@ -1,6 +1,14 @@
 package com.css.challenge.model.entity;
 
+<<<<<<< HEAD:src/main/java/com/css/challenge/model/entity/Coordinator.java
 import com.css.challenge.model.interfaces.Person;
+=======
+
+import com.css.challenge.model.entity.ClassEntity;
+import com.css.challenge.model.entity.Instructor;
+import com.css.challenge.model.interfaces.Person;
+import com.css.challenge.scrumMaster.ScrumMaster;
+>>>>>>> b283c0321cdaa8a66bdb20cb8506d449b7e512fc:src/main/java/com/css/challenge/coordinator/Coordinator.java
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -20,9 +28,11 @@ public class Coordinator extends Person {
     @Column(name = "id_coordinator")
     private Long id;
     //receive list of instructors that are participating
+
     @OneToMany
     @JoinColumn(name = "id_coordinator", referencedColumnName = "id_coordinator", nullable = true)
     private List<Instructor> instructors;
+
 
     //the scrumMaster
     @OneToOne

@@ -60,7 +60,7 @@ public class SquadController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Squad not found.");
         }
         squadRepository.delete(squadResponse.get());
-        return ResponseEntity.status(HttpStatus.OK).body("Class deleted successfully");
+        return ResponseEntity.status(HttpStatus.OK).body("Squad deleted successfully");
     }
 
 

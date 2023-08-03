@@ -111,18 +111,30 @@
 			<artifactId>spring-boot-starter-validation</artifactId>
 		</dependency>
 
+<<<<<<< HEAD
+=======
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>RELEASE</version>
+            <scope>compile</scope>
+        </dependency>
+>>>>>>> b283c0321cdaa8a66bdb20cb8506d449b7e512fc
 		<dependency>
 			<groupId>org.jetbrains</groupId>
 			<artifactId>annotations</artifactId>
 			<version>RELEASE</version>
 			<scope>compile</scope>
 		</dependency>
+<<<<<<< HEAD
 		<dependency>
 			<groupId>org.jetbrains</groupId>
 			<artifactId>annotations</artifactId>
 			<version>RELEASE</version>
 			<scope>compile</scope>
 		</dependency>
+=======
+>>>>>>> b283c0321cdaa8a66bdb20cb8506d449b7e512fc
 	</dependencies>
 
 	<build>

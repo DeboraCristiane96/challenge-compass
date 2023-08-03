@@ -16,6 +16,11 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
 
 public class Instructor extends Person {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_instructor")
+    private Long id;
+
    @Column(nullable = false)
     private String coordinator;
     @Column(nullable = false)
@@ -25,7 +30,11 @@ public class Instructor extends Person {
 
    public Instructor(InstructorRequestDTO data){
 
+<<<<<<< HEAD
 
+=======
+        this.id = data.idPerson();
+>>>>>>> b283c0321cdaa8a66bdb20cb8506d449b7e512fc
         this.name = data.name();
         this.email = data.email();
         this.emailCompass = data.emailCompass();
@@ -47,11 +56,20 @@ public class Instructor extends Person {
 
     }
 
+<<<<<<< HEAD
     public Instructor( String name, String email, String emailCompass,String cpf, boolean status , String birthDay,
                       String civilStatus,Character sex,String phone, String adress, int zipCode, String naturalNess,
                       String coordinator, String scrumMaster, String squad ) {
 
 
+=======
+
+    public Instructor(Long id, String name, String email, String emailCompass,String cpf, boolean status , String birthDay,
+                      String civilStatus,Character sex,String phone, String adress, int zipCode, String naturalNess,
+                      String coordinator, String scrumMaster, String squad ) {
+
+        this.id = id;
+>>>>>>> b283c0321cdaa8a66bdb20cb8506d449b7e512fc
         this.name = name;
         this.email = email;
         this.emailCompass = emailCompass;
@@ -96,6 +114,7 @@ public class Instructor extends Person {
    private String answerQuestion( ) {return "...";}
 
 
+
     @Override
     public boolean equals(Object obj) {
         return EqualsBuilder.reflectionEquals(obj, this);
@@ -107,7 +126,7 @@ public class Instructor extends Person {
                 "coordinator='" + coordinator + '\'' +
                 ", scrumMaster='" + scrumMaster + '\'' +
                 ", squad='" + squad + '\'' +
-                ", idPerson=" + idPerson +
+                ", idPerson=" + id +
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", emailCompass='" + emailCompass + '\'' +
