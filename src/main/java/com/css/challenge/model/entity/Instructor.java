@@ -30,7 +30,7 @@ public class Instructor extends Person {
 
    public Instructor(InstructorRequestDTO data){
 
-        this.id = data.idPerson();
+        this.id = data.id();
         this.name = data.name();
         this.email = data.email();
         this.emailCompass = data.emailCompass();
@@ -89,7 +89,7 @@ public class Instructor extends Person {
                 "coordinator='" + coordinator + '\'' +
                 ", scrumMaster='" + scrumMaster + '\'' +
                 ", squad='" + squad + '\'' +
-                ", idPerson=" + id +
+                ", id=" + id +
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", emailCompass='" + emailCompass + '\'' +
