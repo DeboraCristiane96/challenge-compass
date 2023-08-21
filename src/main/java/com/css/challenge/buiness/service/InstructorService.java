@@ -39,9 +39,9 @@ public class InstructorService {
         instructor.setAdress(data.adress());
         instructor.setZipCode(data.zipCode());
         instructor.setNaturalNess(data.naturalNess());
-        instructor.setCoordinator(data.coordinator());
-        instructor.setScrumMaster(data.scrumMaster());
-        instructor.setSquad(data.squad());
+        instructor.setNameCoordinator(data.coordinator());
+        instructor.setNameScrumMaster(data.scrumMaster());
+        instructor.setNameSquad(data.squad());
 
         return repository.save(instructor);
     }

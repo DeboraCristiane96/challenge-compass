@@ -21,12 +21,12 @@ public class Instructor extends Person {
     @Column(name = "id_instructor")
     private Long id;
 
-   @Column(nullable = false)
-    private String coordinator;
     @Column(nullable = false)
-    private String scrumMaster;
+    private String nameCoordinator;
     @Column(nullable = false)
-    private String squad;
+    private String nameScrumMaster;
+    @Column(nullable = false)
+    private String nameSquad;
 
    public Instructor(InstructorRequestDTO data){
 
@@ -46,9 +46,9 @@ public class Instructor extends Person {
         this.zipCode = data.zipCode();
 
         this.naturalNess = data.naturalNess();
-        this.coordinator = data.coordinator();
-        this.scrumMaster = data.scrumMaster();
-        this.squad = data.squad();
+        this.nameCoordinator = data.coordinator();
+        this.nameScrumMaster = data.scrumMaster();
+        this.nameSquad = data.squad();
 
     }
 
@@ -72,9 +72,9 @@ public class Instructor extends Person {
         this.adress = adress;
         this.zipCode = zipCode;
         this.naturalNess = naturalNess;
-        this.coordinator = coordinator;
-        this.scrumMaster = scrumMaster;
-        this.squad = squad;
+        this.nameCoordinator = coordinator;
+        this.nameScrumMaster = scrumMaster;
+        this.nameSquad = squad;
    }
 
     public Instructor(String name, String email, String emailCompass, String cpf, String birthDay, String civilStatus, char sex, String phone, String naturalNess, String coordinator, String scrumMaster, String squad) {
@@ -90,9 +90,9 @@ public class Instructor extends Person {
         this.phone = phone;
 
         this.naturalNess = naturalNess;
-        this.coordinator = coordinator;
-        this.scrumMaster = scrumMaster;
-        this.squad = squad;
+        this.nameCoordinator = coordinator;
+        this.nameScrumMaster = scrumMaster;
+        this.nameSquad = squad;
    }
 
     public Instructor(String victor, String mail, String mail1, String s, boolean b, String s1, String solteiro, char m, String s2, String recife, int i, String recife1, String joão, String mariana, String css) {
@@ -113,9 +113,9 @@ public class Instructor extends Person {
     @Override
     public String toString() {
         return "Instructor{" +
-                "coordinator='" + coordinator + '\'' +
-                ", scrumMaster='" + scrumMaster + '\'' +
-                ", squad='" + squad + '\'' +
+                "coordinator='" + nameCoordinator + '\'' +
+                ", scrumMaster='" + nameScrumMaster + '\'' +
+                ", squad='" + nameSquad + '\'' +
                 ", id=" + id +
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
